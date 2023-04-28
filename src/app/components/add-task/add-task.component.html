@@ -1,0 +1,48 @@
+<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="text">Task</label>
+    <input
+      type="text"
+      name="text"
+      [(ngModel)]="text"
+      id="text"
+      placeholder="Add Task"
+    />
+  </div>
+  <div class="form-control">
+    <label for="day">Day & Time</label>
+    <input
+      type="text"
+      name="day"
+      [(ngModel)]="day"
+      id="day"
+      placeholder="Add Day & Time"
+    />
+  </div>
+  <div class="form-control form-control-check">
+    <label for="reminder">Set Reminder</label>
+    <input
+      type="checkbox"
+      name="reminder"
+      [(ngModel)]="reminder"
+      id="reminder"
+    />
+  </div>
+  <input type="submit" value="Save Task" class="btn btn-block" />
+</form>
+
+<!-- 
+  directive [(ngModel)]:
+binds the value of HTML controls (input, select, textarea) to application data.
+
+With ng-model directive you can BIND:
+the value of an input field -> to a variable 
+
+This two-way binding with [()] syntax is also known as 'banana-in-a-box syntax'. 
+[input]
+(output)
+[(ngModel)]="the variable in add-task.component.ts"
+
+*ngIf
+to show or not a component
+-->

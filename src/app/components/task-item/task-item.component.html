@@ -1,0 +1,20 @@
+<div
+  [ngClass]="{ reminder: task.reminder }"
+  class="task"
+  (dblclick)="onToggle(task)"
+>
+  <h3>
+    {{ task.text }}
+    <fa-icon
+      (click)="onDelete(task)"
+      [ngStyle]="{ color: 'red' }"
+      [icon]="faTimes"
+    ></fa-icon>
+  </h3>
+  <p>{{ task.day }}</p>
+</div>
+<!-- 
+  (click)="onDelete(task)" fires the function "onDelete()" on the .ts file
+  directive ngClass:
+  adds and removes CSS classes on an HTML element. 
+-->

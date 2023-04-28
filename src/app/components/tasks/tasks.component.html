@@ -1,0 +1,19 @@
+<app-add-task (onAddTask)="addTask($event)"> </app-add-task>
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleReminder)="toggleReminder(task)"
+>
+</app-task-item>
+<!--
+we are looping over the "tasks" and passing in a property of "task" to <app-task-item> component,
+creating 3 <app-task-item> components (tasks is size 3)
+
+
+
+we are emiting onDeleteTask (with @Output) in task-item.component.ts
+and catching it here in "task.component.html",
+after cathing it, we fire off the function "deleteTask(task)"
+then "deleteTask(task)" is executed in the class file "task.component.ts"
+-->
